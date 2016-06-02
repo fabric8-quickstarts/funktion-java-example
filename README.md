@@ -16,9 +16,24 @@ The source code consists of:
 You can then run your funktion locally via:
 
 ```
-mvn spring-boot:run
+mvn
 ```
 
 You can then invoke it via your web browser at [http://localhost:8080/?name=Funktion](http://localhost:8080/?name=Funktion)
 
+### Trying your funktion on Kubernetes or OpenShift
 
+Assuming your current shell is connected to Kubernetes or OpenShift so that you can type a command like
+
+```
+kubectl get pods
+````
+or for OpenShift
+```
+oc get pods
+```
+
+Then the following command will package your funktion and run it on Kubernetes:
+```
+mvn install fabric8:deploy
+```
